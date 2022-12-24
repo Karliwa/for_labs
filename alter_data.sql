@@ -30,6 +30,22 @@ update usr set birth_date = '2002-11-21' where id = 21;
 update usr set birth_date = '2002-11-20' where id = 22;
 update usr set birth_date = '2002-11-19' where id = 23;
 alter table usr alter column birth_date set not null;
+
+9-10 labs 
+
+alter table usr add column role_name varchar(20);
+update usr set role_name='user' where id<=18;
+update usr set role_name='editor' where id<=22 and id>=18;
+update usr set role_name='administrator' where id<=24 and id>=22;
+alter table usr alter column role_name set not NULL;
+alter table usr add column login varchar(64);
+alter table usr add column password varchar(64);
+alter table usr add constraint FK_USR_ROLE foreign key (role_name) references role;
+alter table permission add primary key(id);
+alter table role_permission add constraint FK_role_permisssion_ROLE foreign key (role_name) referebces role;
+alter table role_permission add constraint FK_ROLE_permission foreign key (permission_id) references permission;
+alter table usr add primary key(id);
 */
+
 
 
