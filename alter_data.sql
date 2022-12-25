@@ -57,6 +57,11 @@ alter table group_member add constraint FK_groupmem_grp foreign key (group_id) r
 */
 
 
+/* 13-14 labs 
+alter table address add constraint FK_address_usr foreign key (user_id) references usr;
+*/
+
+
 
 
 
