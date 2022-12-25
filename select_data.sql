@@ -39,6 +39,24 @@ select u.first_name, u.middle_name, u.last_name, u.e_mail, g.name from group_mem
 select u.first_name, u.middle_name, u.last_name, u.e_mail, d.name from university_member um join usr u on um.user_id=u.id join department d on department_id=d.id;
 */
 
+/* 15-16 labs
+create view user_data AS
+select u.first_name, u.middle_name, u.last_name, a.zip_code, a.city, a.street, a.building, a.flat
+from usr u left join address a on u.id=a.user_id
+
+create view pos_usr AS
+select u.first_name, u.middle_name, u.last_name, u.e_mail, p.name
+from university_member um left join usr u on um.user_id=u.id join position p on um.position_id=p.id;
+
+create view grp AS
+select u.first_name, u.middle_name, u.last_name, u.e_mail, g.name
+from group_member gm join university_member um on gm.university_member_id=um.user_id
+join grp g on gm.group_id=g.id join usr u on um.user_id=u.id;
+
+create view lopot AS
+select u.first_name, u.middle_name, u.last_name, u.e_mail, d.name
+from university_member um join usr u on um.user_id=u.id join department d on um.department_id=d.id;
+*/
 
 
 
